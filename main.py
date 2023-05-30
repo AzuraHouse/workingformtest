@@ -19,7 +19,7 @@ def home():
         name = request.form.get("fname")
         email = request.form.get("uemail")
         msg = Message(f"From {name} {email}",
-                      sender="meme@demo.com", recipients=["megadrugsazura@yahoo.com"])
+                      sender="meme@demo.com", recipients=["costet@inbox.ru"])
         msg.body = "Whats up?"
         mail.send(msg)
     return render_template('index.html')
