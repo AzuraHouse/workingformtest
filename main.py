@@ -18,9 +18,9 @@ def home():
     if request.method == "POST":
         name = request.form.get("fname")
         email = request.form.get("uemail")
-        msg = Message(f"From {name} {email}",
-                      sender="meme@demo.com", recipients=["costet@inbox.ru"])
-        msg.body = "Whats up?"
+        msg = Message("Форма",
+                      sender="meme@demo.com", recipients=["megadrugsazura@yahoo.com"])
+        msg.body = f"От {name} {email}"
         mail.send(msg)
     return render_template('index.html')
 
