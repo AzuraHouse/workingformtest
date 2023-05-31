@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config['MAIL_SERVER'] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 465
 app.config["MAIL_USERNAME"] = "snaipertist@gmail.com"
-app.config["MAIL_PASSWORD"] = "gytzptlvncchcxjz"
+app.config["MAIL_PASSWORD"] = os.environ["PASSWORD"]
 app.config["MAIL_USE_TLS"] = False
 app.config["MAIL_USE_SSL"] = True
 mail = Mail(app)
@@ -19,7 +19,7 @@ def home():
         name = request.form.get("fname")
         email = request.form.get("uemail")
         msg = Message("Форма",
-                      sender="meme@demo.com", recipients=["megadrugsazura@yahoo.com"])
+                      sender="meme@demo.com", recipients=["costet@inbox.ru"])
         msg.body = f"От {name} {email}"
         mail.send(msg)
     return render_template('index.html')
